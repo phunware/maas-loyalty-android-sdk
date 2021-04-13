@@ -1,14 +1,14 @@
-Loyalty Coin [![Language](https://img.shields.io/badge/Kotlin-1.3-%234c20f0.svg)]() [![Release](https://img.shields.io/badge/Release-0.1.0-%234c20f0.svg)]()
+PhunToken Loyalty SDK [![Language](https://img.shields.io/badge/Kotlin-1.3-%234c20f0.svg)]() [![Release](https://img.shields.io/badge/Release-0.1.0-%234c20f0.svg)]()
 =====
-![PhunCoin logo](https://s3-us-west-1.amazonaws.com/honeybadger.phunware.com/phuncoin.png)
+![PhunToken logo](https://s3-us-west-1.amazonaws.com/honeybadger.phunware.com/phuncoin.png)
 
-`Loyalty Coin` is an iOS and Android SDK that allows you to reward your users digital currency that can be exchanged for digital goods in your own Loyalty Coin powered ecosystem.
+`PhunToken Loyalty SDK` is Android SDK that allows you to reward your users digital currency that can be exchanged for digital goods in your own PhunToken Loyalty SDK powered ecosystem.
 
 > ***<sub>note</sub>*** <br/>
->  `Loyalty Coin SDK` currently only supports Android for  **SDK 21**+. 
+>  `PhunToken Loyalty SDK` currently only supports Android for  **SDK 23**+. 
   
 <a id="installation"></a>
-## Using Loyalty Coin SDK
+## Using PhunToken Loyalty SDK
 
 ### **Gradle**
 
@@ -31,11 +31,11 @@ implementation "com.phunware.crypto:loyalty:0.1.0"
 ## Usage Overview
 
 ### **Initialization**
-The Loyalty Coin SDK is initialized along with your current [MaaS SDK integration](https://github.com/phunware/maas-core-android-sdk).  That being said, the important integration steps are setting up MaaS Core with relevant appId, accessKey, and secret.
+The PhunToken Loyalty SDK is initialized along with your current [MaaS SDK integration](https://github.com/phunware/maas-core-android-sdk).  That being said, the important integration steps are setting up MaaS Core with relevant appId, accessKey, and secret.
 
 ***
 ### **Opt In**
-Loyalty Coin is opt in by default and based around your own system of registered users.  To opt your user into Loyalty Coin you will need to provide the SDK with a unique identifier for the user that maps cleanly to the representation of the user in your own system (such as the email they used to register with your app). It is expected that you will track the opt in state in your own app.
+PhunToken Loyalty SDK is opt in by default and based around your own system of registered users.  To opt your user into PhunToken Loyalty SDK you will need to provide the SDK with a unique identifier for the user that maps cleanly to the representation of the user in your own system (such as the email they used to register with your app). It is expected that you will track the opt in state in your own app.
 
 
 ```kotlin
@@ -55,7 +55,7 @@ Loyalty.linkManager().linkUser("joe@phunware.com", object : LinkManager.LinkResu
 
 Phunware will maintain a pending balance for your previously opted in users on our servers.  You can request this balance at any time (after opt in).
 
-The actual user balance will be returned along with the provided image and metadata you have previously setup in the portal for your loyalty coin.
+The actual user balance will be returned along with the provided image and metadata you have previously setup in the portal for your loyalty token.
 
 ```kotlin
 Loyalty.assetManager().balance(object : AssetManager.BalanceListener {
@@ -71,7 +71,7 @@ Loyalty.assetManager().balance(object : AssetManager.BalanceListener {
 
 ***
 ### **Events**
-Instrumented Events can be used to reward your user with new Loyalty Coins or to deduct from their balance to unlock digital content.
+Instrumented Events can be used to reward your user with new Loyalty Tokens or to deduct from their balance to unlock digital content.
 
 Your instrumented events must be setup a head of time on the portal, along with any additional thresholds and limits.
 
@@ -96,18 +96,18 @@ Loyalty.assetManager().fireEvent(
 ```
 
 ***
-### **Linking to PhunCoin**
-You have the option of letting your users link their Loyalty Coin balance to the Phunware PhunCoin app.  If you have enabled conversion of your loytalty coin into PhunCoin, your users will be able to convert at the threshold you specify.
+### **Linking to PhunToken**
+You have the option of letting your users link their PhunToken Loyalty balance to the Phunware PhunWallet app.  If you have enabled conversion of your loytalty token into PhunToken, your users will be able to convert at the threshold you specify.
 
 ```kotlin
 Loyalty.linkManager().linkWallet(
     object : LinkManager.LinkResultListener {
         override fun onSuccess() {
-            Log("PhunCoin app installed and linking is in progress.")
+            Log("PhunWallet app installed and linking is in progress.")
         }
 
         override fun onFailure(message: String) {
-            Log("PhunCoin app not installed or other failure.")
+            Log("PhunWallet app not installed or other failure.")
         }
     })
 ```
@@ -121,7 +121,7 @@ The [Reference Documentation](https://phunware.github.io/maas-loyalty-android-sd
 <a id="attribution"></a>
 ## Attribution
 
-PhunCoin SDK uses the following 3rd party components.
+PhunToken Loyalty SDK uses the following 3rd party components.
 
 | Component     | Version  | Description   | License  |
 | ------------- | -------  |:-------------:| -----:|
