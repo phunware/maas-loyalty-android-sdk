@@ -2,7 +2,7 @@ PhunToken Loyalty SDK [![Language](https://img.shields.io/badge/Kotlin-1.3-%234c
 =====
 ![PhunToken logo](https://s3-us-west-1.amazonaws.com/honeybadger.phunware.com/phuncoin.png)
 
-`PhunToken Loyalty SDK` is an Android SDK that allows you to reward your users digital currency that can be exchanged for digital goods in your own PhunToken Loyalty SDK powered ecosystem.
+`PhunToken Loyalty SDK` is an Android SDK that allows you to reward reward your users for in-app customer behavior that helps promote increased brand awareness, engagement and loyalty.
 
 > ***<sub>note</sub>*** <br/>
 >  `PhunToken Loyalty SDK` currently only supports Android for  **SDK 23**+. 
@@ -97,7 +97,7 @@ Loyalty.assetManager().fireEvent(
 
 ***
 ### **Linking to PhunToken**
-You have the option of letting your users link their PhunToken Loyalty balance to the Phunware PhunWallet app.  If you have enabled conversion of your loyalty token into PhunToken, your users will be able to convert at the threshold you specify.
+You have the option of letting your users link their Loyalty token balance to the Phunware PhunWallet app.  If you have enabled conversion of your loyalty token into PhunToken, your users will be able to convert at the threshold you specify.
 
 ```kotlin
 Loyalty.linkManager().linkWallet(
